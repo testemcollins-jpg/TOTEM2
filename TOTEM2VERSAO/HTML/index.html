@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Totem Institucional</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<!-- BOTÃO ADMIN (discreto) -->
+<button class="admin-btn" onclick="openLogin()">⚙</button>
+
+<div class="container">
+
+  <h1>📍 Diretório</h1>
+
+  <div class="floors" id="floorButtons"></div>
+
+  <input id="search" placeholder="Buscar setor...">
+
+  <div class="layout">
+    <div class="results" id="results"></div>
+
+    <div class="map">
+      <!-- SVG dinâmico (planta) -->
+      <div id="mapContainer"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- LOGIN (SÓ ABRE AO CLICAR NA ENGRENAGEM) -->
+<div id="loginScreen" class="login" style="display:none;">
+  <div class="login-card">
+    <h3>Acesso Admin</h3>
+    <input id="user" placeholder="Usuário">
+    <input id="pass" type="password" placeholder="Senha">
+    <div class="login-actions">
+      <button onclick="login()">Entrar</button>
+      <button class="ghost" onclick="closeLogin()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAINEL ADMIN (SÓ APÓS LOGIN) -->
+<div class="admin" id="adminPanel">
+  <h3>Painel</h3>
+  <input id="nome" placeholder="Nome do setor (sem acento)">
+  <input id="andar" placeholder="Andar (0-4)">
+  <button onclick="addSetor()">Adicionar setor</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

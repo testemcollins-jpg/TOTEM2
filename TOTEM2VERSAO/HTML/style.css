@@ -1,0 +1,158 @@
+/* BASE */
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#fff;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* FUNDO ANIMADO */
+.background{
+  position:fixed;
+  inset:0;
+  background: linear-gradient(-45deg,#d4f5e9,#6dd5a3,#2bb673,#0f5132);
+  background-size:400% 400%;
+  animation:wave 12s ease infinite;
+  z-index:-1;
+}
+
+@keyframes wave{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* LAYOUT */
+.container{
+  width:92%;
+  max-width:1200px;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.map{
+  height:420px;
+  background:rgba(255,255,255,0.10);
+  border-radius:12px;
+  padding:10px;
+  overflow:hidden;
+}
+
+.results{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  max-height:420px;
+  overflow:auto;
+}
+
+.card{
+  background:#ffffff22;
+  padding:12px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:.2s;
+}
+.card:hover{ background:#00ff8840; transform:scale(1.02); }
+
+/* ANDARES */
+.floors{
+  display:flex;
+  gap:10px;
+  margin:10px 0;
+}
+.floors button{
+  padding:8px 10px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:#ffffff22;
+  color:#fff;
+}
+.floors button.active{
+  background:#00ff88;
+  color:#000;
+}
+
+/* ROTA + PEGADAS */
+#route{
+  stroke:#ffffff;
+  stroke-width:4;
+  fill:none;
+  stroke-dasharray:6,6;
+}
+.footstep{
+  fill:#ffffff;
+  opacity:.9;
+}
+
+/* ADMIN */
+.admin{
+  position:absolute;
+  right:12px;
+  bottom:12px;
+  width:260px;
+  background:#000000cc;
+  padding:12px;
+  border-radius:12px;
+  display:none;
+}
+.admin input{
+  width:100%;
+  margin:6px 0;
+  padding:8px;
+  border-radius:8px;
+  border:none;
+}
+
+/* BOTÃO ENGRENAGEM */
+.admin-btn{
+  position:absolute;
+  top:10px;
+  right:10px;
+  border:none;
+  border-radius:8px;
+  padding:8px 10px;
+  cursor:pointer;
+}
+
+/* LOGIN MODAL */
+.login{
+  position:fixed;
+  inset:0;
+  background:#000c;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+.login-card{
+  background:#111;
+  padding:20px;
+  border-radius:12px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  width:260px;
+}
+.login-card input{
+  padding:8px;
+  border-radius:8px;
+  border:none;
+}
+.login-actions{
+  display:flex;
+  gap:10px;
+}
+.login-actions .ghost{
+  background:#444;
+  color:#fff;
+}
