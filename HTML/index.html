@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Totem COFFITO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<button class="admin-gear" onclick="openLogin()">⚙</button>
+
+<div class="container">
+    <header class="header-main">
+        <h1>BEM VINDO AO COFFITO</h1>
+        <img src="logocoffito.png" alt="Logo COFFITO" class="main-logo">
+    </header>
+
+    <div class="controls">
+        <div class="floors" id="floorButtons"></div>
+        <div class="search-container">
+            <input id="search" placeholder="ESCOLHA O DESTINO DA SUA JORNADA AQUI" oninput="searchSetor()">
+            <span class="search-icon">🔍</span>
+        </div>
+    </div>
+
+    <div class="layout" id="mainLayout" style="display: none;">
+        <div class="results" id="results"></div>
+        <div class="map">
+            <div id="mapContainer"></div>
+        </div>
+    </div>
+</div>
+
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <h3>Acesso Restrito</h3>
+        <input type="text" id="user" placeholder="Usuário">
+        <input type="password" id="pass" placeholder="Senha">
+        <div class="modal-buttons">
+            <button onclick="checkLogin()">Entrar</button>
+            <button class="cancel" onclick="closeModal('loginModal')">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<div id="adminPanel" class="modal">
+    <div class="modal-content admin-card">
+        <h3>Painel de Controle</h3>
+        <input type="text" id="nomeSetor" placeholder="Nome do setor">
+        <input type="number" id="andarSetor" placeholder="Andar (0-4)">
+        <div class="modal-buttons">
+            <button onclick="addSetor()">Salvar Setor</button>
+            <button class="cancel" onclick="closeModal('adminPanel')">Sair</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
